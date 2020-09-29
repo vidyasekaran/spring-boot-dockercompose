@@ -1,0 +1,19 @@
+
+Steps to build docker and run in kubernetes is found @ https://jhooq.com/deploy-spring-boot-microservices-on-kubernetes/
+
+build an image
+docker build -t service-registry .
+
+run the image 
+docker run -p 8080:8080 service-registry .
+
+from browser hit
+http://10.0.75.1:8761/
+
+Since our registry name on dockerhub is “vidguru/kubernete” so we need to tag the build image one more time with docker registry name
+docker tag service-registry vidguru/kubernetes:service-registry
+
+docker push vidguru/kubernetes:service-registry
+
+Refer below to deploy docker image to kubernetes
+https://www.youtube.com/watch?v=pWy8PWh1Drs

@@ -1,0 +1,21 @@
+server:
+  port: 9192
+spring:
+  zipkin:
+    base-url: http://localhost:9411/
+  application:
+    name: ORDER-SERVICE
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/springbootdb?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: guru
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+logging:
+  file: D:/logs/microservices.log
